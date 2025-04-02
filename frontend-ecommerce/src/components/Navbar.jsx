@@ -71,8 +71,8 @@ const Navbar = () => {
                         <Link to="/" className="hover:text-black cursor-pointer">HOME</Link>
                         <Link to="/collection" className="hover:text-black cursor-pointer">COLLECTION</Link>
                         <Link to="/orders" className="hover:text-black cursor-pointer">MY ORDERS</Link>
-                        
-                        <p onClick={logout} className="hover:text-black cursor-pointer">LOGOUT</p>
+                        <p onClick={navigate("/login")} className={`hover:text-black cursor-pointer ${token ? 'hidden' : 'block'}`}>LOGIN</p>
+                        <p onClick={logout} className={`hover:text-black cursor-pointer ${token ? 'block' : 'hidden'}`}>LOGOUT</p>
                         {/* <Link to="/about" className="hover:text-black cursor-pointer">ABOUT</Link>
                         <Link to="/contact" className="hover:text-black cursor-pointer">CONTACT</Link> */}
                     </div>
