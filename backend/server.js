@@ -16,7 +16,7 @@ const port=process.env.PORT || 4000;
 connectDB() 
 connectCloudinary()
 const corsOptions = {
-    origin: 'https://ecommerce-app-frontend-sandy.vercel.app', // frontend URL
+    origin: process.env.FRONTEND_URL, // frontend URL
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization', 'token', "Token"],
     methods: ['GET', 'POST', 'PUT', 'DELETE']

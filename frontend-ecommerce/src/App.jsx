@@ -32,8 +32,7 @@ const App = () => {
   const [adminToken, setAdminToken] = useState(
     localStorage.getItem("adminToken") || ""
   );
-  const CLIENT_ID = "520614897610-ruum58cidfnq81hpjgtungru5n5k27f7.apps.googleusercontent.com";
-
+  const CLIENT_ID = import.meta.env.CLIENT_ID;
   useEffect(() => {
     localStorage.setItem("adminToken", adminToken);
   }, [adminToken]);
