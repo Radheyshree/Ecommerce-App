@@ -7,20 +7,16 @@ const SearchBar = () => {
     const location = useLocation();
 
     useEffect(() => {
-        if(location.pathname === "/collection"){
-            setShowSearch(true);
-        }
-        else{
+        if(location.pathname !== "/collection"){
             setShowSearch(false);
-        }
-        
+        }       
     },[location.pathname]);
 
   return showSearch ? (
     <div className="border-t border-b bg-gray-50 text-center">
-        <div className="inline-flex items-center justify-center border border-gray-400 px-5 py-2 mx-3 my-5 rounded-full w-3/4 sm:w-1/2 ">
-            <input type="text" placeholder="Search items" className="flex-1 outline-none bg-inherit text-sm" value={search} onChange={(e)=> setSearch(e.target.value)}/>
-            <img src={assets.search_icon} className="w-4 cursor-pointer" alt=""/>
+        <div className="inline-flex items-center justify-center px-5 py-2 mx-3 my-5 rounded-full w-3/4 sm:w-1/2 ">
+            <input placeholder="Search items" className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-10 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" value={search} onChange={(e)=> setSearch(e.target.value)}/>
+            <img src={assets.search_icon} className="w-6 pl-2 cursor-pointer" alt=""/>
         </div>
         <img onClick={()=> setShowSearch(false)} src={assets.cross_icon} className="inline w-3 cursor-pointer" alt=""/>     
     </div>
