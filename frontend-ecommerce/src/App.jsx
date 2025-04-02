@@ -32,7 +32,8 @@ const App = () => {
   const [adminToken, setAdminToken] = useState(
     localStorage.getItem("adminToken") || ""
   );
-  const CLIENT_ID = import.meta.env.CLIENT_ID;
+  const googleId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+  
   useEffect(() => {
     localStorage.setItem("adminToken", adminToken);
   }, [adminToken]);
@@ -40,7 +41,7 @@ const App = () => {
   return (
     <div className="min-h-screen">
       <ToastContainer />
-      <GoogleOAuthProvider clientId={CLIENT_ID}>
+      <GoogleOAuthProvider clientId={googleId}>
       <Routes>
         {/* Admin Routes */}
         <Route

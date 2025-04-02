@@ -74,7 +74,7 @@ const statusHandler = async(event, orderId) =>{
                 <p>{order.address.phone}</p>
             </div>
             <div>
-              <p className="text-sm sm:text-[15px]">Items: {order.items.length}</p>
+              <p className="text-sm sm:text-[15px]">Different Items: {order.items.length}</p>
               <p className="mt-3">Payment Method: {order.paymentMethod}</p>
               <p>Payment Status: {order.payment ? "Done":"Pending"}</p>
               <p>Date: {new Date(order.date).toLocaleDateString()}</p>
