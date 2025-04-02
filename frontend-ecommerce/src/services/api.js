@@ -3,7 +3,7 @@ const backend_url = import.meta.env.VITE_BACKEND_URL
 const baseurl = backend_url + "/api/v1"
 const api = axios.create({
    
-    baseURL: {baseurl},
+    baseURL: baseurl,
     withCredentials: true,
 
 });
